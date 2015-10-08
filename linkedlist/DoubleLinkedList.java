@@ -6,3 +6,4 @@ package datastructure.linkedlist;
 public class DoubleLinkedList extends LinkedList {
 
 }
+
