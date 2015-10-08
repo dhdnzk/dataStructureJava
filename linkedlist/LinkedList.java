@@ -22,6 +22,8 @@ public class LinkedList {
     LinkedList ( int data ) {
         this.head = new Node();
         this.head.next = new Node();
+        this.head.next.next = null;
+        this.head.next.data = data;
         this.tail = this.head.next;
         this.cur = null;
         this.before = null;
@@ -39,10 +41,10 @@ public class LinkedList {
     }
 
     void nodeAddOnHead ( int data ) {
-        Node tmp = new Node();
-        tmp.next = this.head.next;
-        tmp.data = data;
-        this.head.next = tmp;
+        Node newNode = new Node();
+        newNode.next = this.head.next;
+        newNode.data = data;
+        this.head.next = newNode;
         this.cur = null;
         this.before = null;
         this.numOfData ++;
