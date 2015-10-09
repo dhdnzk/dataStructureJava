@@ -2,6 +2,7 @@ package datastructure.linkedlist;
 
 /**
  * Created by DH on 15. 10. 8..
+ * Last modify : 15. 10. 9..
  */
 public class LinkedList {
     Node head;
@@ -19,7 +20,7 @@ public class LinkedList {
         this.numOfData = 0;
     }
 
-    LinkedList ( int data ) {
+    LinkedList ( Data data ) {
         this.head = new Node();
         this.head.next = new Node();
         this.head.next.next = null;
@@ -30,7 +31,7 @@ public class LinkedList {
         this.numOfData = 1;
     }
 
-    void nodeAddOnTail ( int data ) {
+    void nodeAddOnTail ( Data data ) {
         this.tail.next = new Node();
         this.tail = this.tail.next;
         this.tail.data = data;
@@ -40,7 +41,7 @@ public class LinkedList {
         this.numOfData ++;
     }
 
-    void nodeAddOnHead ( int data ) {
+    void nodeAddOnHead ( Data data ) {
         Node newNode = new Node();
         newNode.next = this.head.next;
         newNode.data = data;
@@ -50,28 +51,31 @@ public class LinkedList {
         this.numOfData ++;
     }
 
-    int lFirst () {
+    Data lFirst () {
         this.cur = this.head.next;
         this.before = this.head;
         return this.cur.data;
     }
 
-    int lNext () {
+    Data lNext () {
         this.before = this.cur;
         this.cur = this.before.next;
         return this.cur.data;
     }
 
-    int delCurNode () {
-            int delData = this.cur.data;
+    Data delCurNode () {
+            Data delData = this.cur.data;
             this.cur = this.before;
             this.numOfData--;
             return delData;
     }
-
 }
 
 class Node {
-    int data;
+    Data data;
     Node next;
+}
+
+class Data {
+
 }
